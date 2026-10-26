@@ -90,9 +90,9 @@ h1,h2,h3,p,a,dd { overflow-wrap: anywhere; }
 .language-switch a:focus-visible { outline:2px solid #a77428; outline-offset:2px; }
 .language-switch > span { color:#aaa; }
 .header-actions { flex-shrink:0; }
-.max-link { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; flex-shrink:0; border:1px solid var(--studio-line); border-radius:0; background:#fff; text-decoration:none; transition:border-color .2s,background .2s; }
+.max-link { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; flex-shrink:0; border:0; background:transparent; text-decoration:none; transition:transform .2s; }
 .max-link img { display:block; width:28px; height:28px; }
-.max-link:hover { background:var(--studio-paper); border-color:#a77428; }
+.max-link:hover { transform:scale(1.06); }
 .max-link:focus-visible { outline:2px solid #a77428; outline-offset:3px; }
 html[lang="en"] .logo-text small { letter-spacing:.04em; }
 #mobile-menu { overflow-y:auto; overscroll-behavior:contain; padding-top:74px; padding-bottom:max(24px,env(safe-area-inset-bottom)); }
