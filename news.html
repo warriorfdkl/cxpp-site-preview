@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script src="language.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Актуальные новости института, отраслевые выставки, достижения и корпоративные события.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Новости и события — Союзхимпромпроект">
+  <meta property="og:description" content="Актуальные новости института, отраслевые выставки, достижения и корпоративные события.">
+  <meta property="og:image" content="https://warriorfdkl.github.io/cxpp-site-preview/logo%20main/logo-complete.png">
+<title>Новости — Союзхимпромпроект</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  body { background: #F9F3E9; }
+  .news-section { background: #F9F3E9; padding: clamp(60px,9vw,110px) clamp(20px,5vw,60px) clamp(70px,10vw,130px); }
+  .news-inner { max-width: 1240px; margin: 0 auto; }
+
+  /* Featured */
+  .featured-card {
+    text-decoration: none; display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    background: #fff; border: 1px solid rgba(24,43,75,.07); border-radius: 10px;
+    overflow: hidden; margin-bottom: 22px;
+    box-shadow: 0 1px 2px rgba(24,43,75,.04);
+    transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .3s;
+  }
+  .featured-card:hover { box-shadow: 0 26px 50px -28px rgba(24,43,75,.45); }
+  .featured-thumb {
+    position: relative; min-height: 260px;
+    background: repeating-linear-gradient(135deg, #ece6db 0 14px, #f2ede4 14px 28px);
+  }
+  .featured-thumb-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(212,171,98,.18), transparent 65%); }
+  .featured-date { position: absolute; left: 22px; top: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #94a3b8; }
+  .featured-body { padding: clamp(30px,4vw,48px); display: flex; flex-direction: column; justify-content: center; }
+  .featured-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; color: #D4AB63; }
+  .featured-title { margin: 16px 0 0; font-size: clamp(22px,2.6vw,32px); font-weight: 800; letter-spacing: -.02em; color: #182b4b; line-height: 1.15; }
+  .featured-desc { margin: 14px 0 0; font-size: 15.5px; line-height: 1.65; color: #64748b; max-width: 46ch; }
+  .featured-read { margin-top: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .06em; color: #D4AB63; }
+
+  /* News grid */
+  .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px; }
+  .news-card {
+    text-decoration: none; background: #fff; border: 1px solid rgba(24,43,75,.07);
+    border-radius: 10px; overflow: hidden; display: flex; flex-direction: column;
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1), box-shadow .3s;
+  }
+  .news-card:hover { box-shadow: 0 22px 44px -26px rgba(24,43,75,.4); }
+  .news-thumb {
+    height: 160px; position: relative;
+    background: repeating-linear-gradient(135deg, #ece6db 0 12px, #f2ede4 12px 24px);
+  }
+  .news-thumb-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(212,171,98,.12), transparent 60%); }
+  .news-thumb-date { position: absolute; left: 16px; top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #94a3b8; }
+  .news-body { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
+  .news-title { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3; color: #182b4b; letter-spacing: -.01em; }
+  .news-read { margin-top: auto; padding-top: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .06em; color: #D4AB63; }
+
+  /* Filter bar */
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+  .filter-btn {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em;
+    padding: 8px 18px; border-radius: 6px; border: 1px solid rgba(24,43,75,.15);
+    background: #fff; color: #64748b; cursor: pointer;
+    transition: all .2s;
+  }
+  .filter-btn:hover { border-color: rgba(212,171,98,.5); color: #D4AB63; }
+  .filter-btn.active { background: #182b4b; color: #D4AB63; border-color: #182b4b; }
+
+  /* hidden by filter */
+  .news-card.hidden, .featured-card.hidden { display: none; }
+</style>
+
+<link rel="stylesheet" href="refresh.css">
+<script src="intro.js"></script>
+<link rel="stylesheet" href="studio.css">
+<link rel="stylesheet" href="ux.css">
+<script src="api.js"></script>
+<meta name="robots" content="noindex,nofollow">
+<link rel="alternate" hreflang="ru" href="https://warriorfdkl.github.io/cxpp-site-preview/news.html">
+<link rel="alternate" hreflang="en" href="https://warriorfdkl.github.io/cxpp-site-preview/en/news.html">
+<link rel="alternate" hreflang="x-default" href="https://warriorfdkl.github.io/cxpp-site-preview/news.html">
+</head>
+<body>
+<a href="#main-content" class="skip-link">К содержимому</a>
+
+<div id="progress-bar"></div>
+
+<header id="site-header">
+  <a href="index.html" class="header-logo">
+    <span class="logo-icon"><img src="logo main/logo-complete.png" alt="СХПП"></span>
+    <span class="logo-text"><strong>Союзхимпромпроект</strong><small>ПИ · КНИТУ · КАЗАНЬ</small></span>
+  </a>
+  <nav id="desktop-nav">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="services.html">Услуги и технологии</a>
+    <a href="leadership.html">Руководство</a>
+    <a href="projects.html">Проекты</a>
+    <a href="news.html" class="active">Новости</a>
+    <a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  <div class="header-actions"><nav class="language-switch" aria-label="Язык сайта"><a href="news.html" lang="ru" hreflang="ru" data-language="ru" aria-current="true" aria-label="Русская версия">RU</a><span aria-hidden="true">/</span><a href="en/news.html" lang="en" hreflang="en" data-language="en" aria-label="Английская версия">EN</a></nav>
+    <a href="contacts.html" id="cta-btn">Связаться</a><a class="max-link" href="https://max.ru/join/fExnQDgUSwpiuE_qeJ3bHzJxiOXkAr_PZIP31EDkyGs" target="_blank" rel="noopener noreferrer" aria-label="Группа института в MAX" title="Группа института в MAX"><img src="assets/icons/max.svg" alt="" width="28" height="28"></a>
+    <button id="burger-btn" aria-label="Меню"><span></span></button>
+  </div>
+</header>
+<div id="mobile-menu">
+  <button id="close-menu-btn" aria-label="Закрыть">×</button>
+  <a href="index.html">Главная</a>
+  <a href="about.html">О нас</a>
+  <a href="services.html">Услуги и технологии</a>
+  <a href="leadership.html">Руководство</a>
+  <a href="projects.html">Проекты</a>
+  <a href="news.html"><span class="dot"></span>Новости</a>
+    <a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a>
+  <a href="contacts.html">Контакты</a>
+</div>
+
+<section id="main-content" tabindex="-1" class="page-hero">
+  <div class="page-hero-blob"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">ГЛАВНАЯ</a><span class="sep">/</span><span class="crumb">НОВОСТИ</span></div>
+    <h1>Новости и события</h1>
+    <p>Жизнь института, профориентация, спорт и достижения коллектива.</p>
+  </div>
+</section>
+
+<section class="news-section">
+  <div class="news-inner">
+    <!-- Фильтр по тегам -->
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-filter="all">ВСЕ</button>
+      <button class="filter-btn" data-filter="ГЛАВНОЕ">ГЛАВНОЕ</button>
+      <button class="filter-btn" data-filter="ЖИЗНЬ ИНСТИТУТА">ЖИЗНЬ ИНСТИТУТА</button>
+      <button class="filter-btn" data-filter="ДОСТИЖЕНИЯ">ДОСТИЖЕНИЯ</button>
+      <button class="filter-btn" data-filter="РАЗВИТИЕ">РАЗВИТИЕ</button>
+      <button class="filter-btn" data-filter="ОБРАЗОВАНИЕ">ОБРАЗОВАНИЕ</button>
+      <button class="filter-btn" data-filter="ПРАЗДНИК">ПРАЗДНИК</button>
+      <button class="filter-btn" data-filter="СОБЫТИЕ">СОБЫТИЕ</button>
+    </div>
+
+    <div id="featured-news">
+    <a href="news-otkrytye-dveri.html" class="featured-card" data-reveal data-tag="ГЛАВНОЕ">
+      <div class="featured-thumb">
+        <div class="featured-thumb-overlay"></div>
+        <span class="featured-date">2026-04-17</span>
+      </div>
+      <div class="featured-body">
+        <span class="featured-label">ГЛАВНОЕ</span>
+        <h2 class="featured-title">День открытых дверей для учащихся 9–11 классов</h2>
+        <p class="featured-desc">Институт распахнул двери для будущих абитуриентов: знакомство с профессией проектировщика, экскурсия по подразделениям и живое общение со специалистами.</p>
+        <span class="featured-read">читать →</span>
+      </div>
+    </a>
+    </div>
+
+    <div class="news-grid" id="news-grid">
+      <a href="news-sport.html" class="news-card" data-reveal data-tag="ЖИЗНЬ ИНСТИТУТА">
+        <div class="news-thumb"><div class="news-thumb-overlay"></div><span class="news-thumb-date">2025-08-26</span></div>
+        <div class="news-body"><h3 class="news-title">Спортивный СХПП</h3><span class="news-read">читать →</span></div>
+      </a>
+      <a href="news-konkurs.html" class="news-card" data-reveal data-delay="50" data-tag="ДОСТИЖЕНИЯ">
+        <div class="news-thumb"><div class="news-thumb-overlay"></div><span class="news-thumb-date">2025-08-05</span></div>
+        <div class="news-body"><h3 class="news-title">Эффективная работа СХПП отмечена на Всероссийском конкурсе</h3><span class="news-read">читать →</span></div>
+      </a>
+      <a href="news-office.html" class="news-card" data-reveal data-delay="100" data-tag="РАЗВИТИЕ">
+        <div class="news-thumb"><div class="news-thumb-overlay"></div><span class="news-thumb-date">2025-07-06</span></div>
+        <div class="news-body"><h3 class="news-title">Второй офис ПИ «Союзхимпромпроект»</h3><span class="news-read">читать →</span></div>
+      </a>
+      <a href="news-tselevoe.html" class="news-card" data-reveal data-delay="50" data-tag="ОБРАЗОВАНИЕ">
+        <div class="news-thumb"><div class="news-thumb-overlay"></div><span class="news-thumb-date">2025-06-23</span></div>
+        <div class="news-body"><h3 class="news-title">Высшее техническое образование по целевому договору с СХПП</h3><span class="news-read">читать →</span></div>
+      </a>
+      <a href="news-den-himika.html" class="news-card" data-reveal data-delay="100" data-tag="ПРАЗДНИК">
+        <div class="news-thumb"><div class="news-thumb-overlay"></div><span class="news-thumb-date">2025-05-25</span></div>
+        <div class="news-body"><h3 class="news-title">С Днём химика!</h3><span class="news-read">читать →</span></div>
+      </a>
+      <a href="news-vystavka.html" class="news-card" data-reveal data-delay="150" data-tag="СОБЫТИЕ">
+        <div class="news-thumb"><div class="news-thumb-overlay"></div><span class="news-thumb-date">2025-04-12</span></div>
+        <div class="news-body"><h3 class="news-title">Участие в отраслевой выставке проектных решений</h3><span class="news-read">читать →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-blob"></div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand"><span class="footer-logo-icon"><img src="logo main/logo-complete.png" alt="СХПП"></span><span class="footer-brand-name">Союзхимпромпроект</span></a>
+        <p class="footer-tagline">Проектный институт при ФГБОУ ВО «КНИТУ». Комплексное проектирование объектов химии и промышленности.</p>
+        <a href="mailto:cxpp@cxpp.ru" class="footer-email-btn">cxpp@cxpp.ru</a>
+      </div>
+      <div>
+        <div class="footer-section-label">РАЗДЕЛЫ</div>
+        <div class="footer-nav-links">
+          <a href="index.html">Главная</a><a href="about.html">О нас</a>
+          <a href="services.html">Услуги и технологии</a><a href="leadership.html">Руководство</a><a href="projects.html">Проекты</a>
+          <a href="news.html">Новости</a><a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a><a href="contacts.html">Контакты</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-section-label">КОНТАКТЫ</div>
+        <div class="footer-contact-item"><div class="footer-contact-label">АДРЕС</div><div class="footer-contact-value">420032, г. Казань, ул. Димитрова, 11</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">ТЕЛЕФОН</div><div class="footer-contact-value">(843) 294-94-10</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">ФАКС</div><div class="footer-contact-value">(843) 294-92-80</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">РЕЖИМ</div><div class="footer-contact-value">Пн–Пт, 8:00 — 17:00</div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">ПИ «Союзхимпромпроект» · ФГБОУ ВО КНИТУ · © 2026</span>
+      <span class="footer-addr">г. Казань, ул. Димитрова, 11</span>
+    </div>
+  </div>
+</footer>
+<script src="news-filter.js"></script>
+<script src="content.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
+
+

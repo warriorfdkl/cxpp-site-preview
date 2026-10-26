@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script src="language.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Полный цикл проектирования промышленных объектов: инженерные изыскания, BIM-моделирование, лазерное сканирование и авторский надзор.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Услуги и технологии — Союзхимпромпроект">
+  <meta property="og:description" content="Полный цикл проектирования промышленных объектов: инженерные изыскания, BIM-моделирование, лазерное сканирование и авторский надзор.">
+  <meta property="og:image" content="https://warriorfdkl.github.io/cxpp-site-preview/logo%20main/logo-complete.png">
+<title>Услуги и технологии — Союзхимпромпроект</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  body { background: #F9F3E9; }
+  .services-section { background: #F9F3E9; padding: clamp(70px,10vw,130px) clamp(20px,5vw,60px); }
+  .cards-grid { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 20px; }
+  .srv-card {
+    background: #fff; border: 1px solid rgba(24,43,75,.08); border-radius: 10px; padding: 36px 32px;
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s;
+  }
+  .srv-card:hover { border-color: rgba(212,171,98,.5); box-shadow: 0 12px 28px -10px rgba(18, 28, 43, 0.09); border-color: #D4AB63; transform: translateY(-4px); }
+  .srv-card-top { display: flex; align-items: center; justify-content: space-between; }
+  .srv-icon { width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center; }
+  .srv-icon span { width: 17px; height: 17px; transform: rotate(45deg); border-radius: 3px; }
+  .srv-num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #D4AB63; letter-spacing: .05em; }
+  .srv-card h3 { margin: 24px 0 0; font-size: 22px; font-weight: 700; letter-spacing: -.01em; color: #182b4b; }
+  .srv-card p { margin: 13px 0 0; font-size: 15px; line-height: 1.65; color: #64748b; }
+
+  .process-strip { max-width: 1240px; margin: clamp(48px,6vw,80px) auto 0; }
+  .process-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1px; background: rgba(24,43,75,.08);
+    border: 1px solid rgba(24,43,75,.08); border-radius: 10px; overflow: hidden;
+  }
+  .process-step { background: #fff; padding: 30px 26px; min-height: 150px; display: flex; flex-direction: column; }
+  .process-num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #D4AB63; }
+  .process-title { margin-top: 14px; font-size: 17px; font-weight: 700; color: #182b4b; letter-spacing: -.01em; line-height: 1.2; }
+</style>
+
+<link rel="stylesheet" href="refresh.css">
+<script src="intro.js"></script>
+<link rel="stylesheet" href="studio.css">
+<link rel="stylesheet" href="ux.css">
+<script src="api.js"></script>
+<meta name="robots" content="noindex,nofollow">
+<link rel="alternate" hreflang="ru" href="https://warriorfdkl.github.io/cxpp-site-preview/services.html">
+<link rel="alternate" hreflang="en" href="https://warriorfdkl.github.io/cxpp-site-preview/en/services.html">
+<link rel="alternate" hreflang="x-default" href="https://warriorfdkl.github.io/cxpp-site-preview/services.html">
+</head>
+<body class="services-page">
+<a href="#main-content" class="skip-link">К содержимому</a>
+
+<div id="progress-bar"></div>
+
+<header id="site-header">
+  <a href="index.html" class="header-logo">
+    <span class="logo-icon"><img src="logo main/logo-complete.png" alt="СХПП"></span>
+    <span class="logo-text"><strong>Союзхимпромпроект</strong><small>ПИ · КНИТУ · КАЗАНЬ</small></span>
+  </a>
+  <nav id="desktop-nav">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="services.html" class="active">Услуги и технологии</a>
+    <a href="leadership.html">Руководство</a>
+    <a href="projects.html">Проекты</a>
+    <a href="news.html">Новости</a>
+    <a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  <div class="header-actions"><nav class="language-switch" aria-label="Язык сайта"><a href="services.html" lang="ru" hreflang="ru" data-language="ru" aria-current="true" aria-label="Русская версия">RU</a><span aria-hidden="true">/</span><a href="en/services.html" lang="en" hreflang="en" data-language="en" aria-label="Английская версия">EN</a></nav>
+    <a href="contacts.html" id="cta-btn">Связаться</a><a class="max-link" href="https://max.ru/join/fExnQDgUSwpiuE_qeJ3bHzJxiOXkAr_PZIP31EDkyGs" target="_blank" rel="noopener noreferrer" aria-label="Группа института в MAX" title="Группа института в MAX"><img src="assets/icons/max.svg" alt="" width="28" height="28"></a>
+    <button id="burger-btn" aria-label="Меню"><span></span></button>
+  </div>
+</header>
+<div id="mobile-menu">
+  <button id="close-menu-btn" aria-label="Закрыть">×</button>
+  <a href="index.html">Главная</a>
+  <a href="about.html">О нас</a>
+  <a href="services.html"><span class="dot"></span>Услуги и технологии</a>
+  <a href="leadership.html">Руководство</a>
+  <a href="projects.html">Проекты</a>
+  <a href="news.html">Новости</a>
+    <a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a>
+  <a href="contacts.html">Контакты</a>
+</div>
+
+<section id="main-content" tabindex="-1" class="page-hero">
+  <div class="page-hero-blob"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">ГЛАВНАЯ</a><span class="sep">/</span><span class="crumb">УСЛУГИ И ТЕХНОЛОГИИ</span></div>
+    <h1>Услуги и технологии</h1>
+    <p>Полный цикл промышленного проектирования — от предпроектных проработок до авторского надзора. Цифровые инструменты на каждом этапе работы.</p>
+    <nav class="services-jump-nav" aria-label="На этой странице"><a href="#services">Услуги</a><a href="#technologies">Технологии</a><a href="#process">Этапы работы</a></nav>
+  </div>
+</section>
+
+<section class="services-section" id="services" aria-labelledby="services-heading">
+  <div class="services-block-head"><span class="studio-kicker">01 / Услуги</span><h2 id="services-heading">Что мы проектируем</h2></div>
+  <div class="cards-grid">
+    <div class="srv-card" data-reveal>
+      <div class="srv-card-top">
+        <div class="srv-num">01</div>
+      </div>
+      <h3>Промышленные объекты</h3>
+      <p>Заводы и производства химии, нефтехимии, газохимии и пищевой отрасли — комплексное проектирование.</p>
+    </div>
+    <div class="srv-card" data-reveal data-delay="60">
+      <div class="srv-card-top">
+        <div class="srv-num">02</div>
+      </div>
+      <h3>Линейные объекты</h3>
+      <p>Трубопроводы, эстакады, инженерные сети и объекты транспортной инфраструктуры.</p>
+    </div>
+    <div class="srv-card" data-reveal data-delay="120">
+      <div class="srv-card-top">
+        <div class="srv-num">03</div>
+      </div>
+      <h3>Гражданские объекты</h3>
+      <p>Общественные здания, объекты защиты и инженерная инфраструктура предприятий.</p>
+    </div>
+    <div class="srv-card" data-reveal data-delay="60">
+      <div class="srv-card-top">
+        <div class="srv-num">04</div>
+      </div>
+      <h3>Инженерные изыскания</h3>
+      <p>Обследование строительных конструкций, лазерное сканирование, обмеры и обмерные модели.</p>
+    </div>
+    <div class="srv-card" data-reveal data-delay="120">
+      <div class="srv-card-top">
+        <div class="srv-num">05</div>
+      </div>
+      <h3>Научно-техническое сопровождение</h3>
+      <p>НТС при проектировании объектов повышенного уровня ответственности.</p>
+    </div>
+    <div class="srv-card" data-reveal data-delay="180">
+      <div class="srv-card-top">
+        <div class="srv-num">06</div>
+      </div>
+      <h3>Авторский надзор</h3>
+      <p>Сопровождение строительства и контроль соответствия проекту на площадке.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="services-technologies" id="technologies" aria-labelledby="technologies-heading">
+  <div class="services-block-head"><span class="studio-kicker">02 / Технологии</span><h2 id="technologies-heading">Как мы работаем</h2><p>Информационное моделирование, лазерное сканирование и фотограмметрия на всех стадиях проекта.</p></div>
+
+  <div class="tech-grid">
+    <div class="tech-card" data-reveal>
+      <h3>3D / BIM-моделирование</h3>
+      <p>Информационное трёхмерное моделирование объектов на всех стадиях проекта.</p>
+    </div>
+    <div class="tech-card" data-reveal data-delay="60">
+      <h3>Лазерное сканирование</h3>
+      <p>Высокоточные облака точек для реконструкции и обследования объектов.</p>
+    </div>
+    <div class="tech-card" data-reveal data-delay="120">
+      <h3>Фотограмметрия с БПЛА</h3>
+      <p>Съёмка с квадрокоптера для построения цифровых моделей местности.</p>
+    </div>
+    <div class="tech-card" data-reveal data-delay="180">
+      <h3>Нетиповое оборудование</h3>
+      <p>Разработка конструкторской документации и технических регламентов.</p>
+    </div>
+  </div>
+
+  <div class="metrics-row" data-reveal>
+    <div>
+      <div class="metric-val">3<span class="gold">D</span></div>
+      <div class="metric-label">информационные модели объектов</div>
+    </div>
+    <div>
+      <div class="metric-val"><span data-count="100">0</span><span class="gold">%</span></div>
+      <div class="metric-label">цифровое сопровождение проекта</div>
+    </div>
+    <div>
+      <div class="metric-val">1</div>
+      <div class="metric-label">единая среда данных проекта</div>
+    </div>
+  </div>
+
+</section>
+<section class="services-process" id="process" aria-labelledby="process-heading">
+  <div class="services-block-head"><span class="studio-kicker">03 / Процесс</span><h2 id="process-heading">Этапы работы</h2></div>
+  <div class="process-strip" data-reveal>
+
+    <div class="process-grid">
+      <div class="process-step"><span class="process-num">01</span><span class="process-title">Предпроектные проработки</span></div>
+      <div class="process-step"><span class="process-num">02</span><span class="process-title">Инженерные изыскания</span></div>
+      <div class="process-step"><span class="process-num">03</span><span class="process-title">Проектная документация</span></div>
+      <div class="process-step"><span class="process-num">04</span><span class="process-title">Рабочая документация</span></div>
+      <div class="process-step"><span class="process-num">05</span><span class="process-title">Авторский надзор</span></div>
+    </div>
+  </div>
+
+  <div class="section-action"><p>Планируете новое производство или реконструкцию? Расскажите об объекте и задаче.</p><a class="action-button" href="contacts.html#contact-feedback-form">Обсудить задачу ↗</a></div>
+</section>
+
+<footer>
+  <div class="footer-blob"></div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand"><span class="footer-logo-icon"><img src="logo main/logo-complete.png" alt="СХПП"></span><span class="footer-brand-name">Союзхимпромпроект</span></a>
+        <p class="footer-tagline">Проектный институт при ФГБОУ ВО «КНИТУ». Комплексное проектирование объектов химии и промышленности.</p>
+        <a href="mailto:cxpp@cxpp.ru" class="footer-email-btn">cxpp@cxpp.ru</a>
+      </div>
+      <div>
+        <div class="footer-section-label">РАЗДЕЛЫ</div>
+        <div class="footer-nav-links">
+          <a href="index.html">Главная</a><a href="about.html">О нас</a>
+          <a href="services.html">Услуги и технологии</a><a href="leadership.html">Руководство</a><a href="projects.html">Проекты</a>
+          <a href="news.html">Новости</a><a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a><a href="contacts.html">Контакты</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-section-label">КОНТАКТЫ</div>
+        <div class="footer-contact-item"><div class="footer-contact-label">АДРЕС</div><div class="footer-contact-value">420032, г. Казань, ул. Димитрова, 11</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">ТЕЛЕФОН</div><div class="footer-contact-value">(843) 294-94-10</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">ФАКС</div><div class="footer-contact-value">(843) 294-92-80</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">РЕЖИМ</div><div class="footer-contact-value">Пн–Пт, 8:00 — 17:00</div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">ПИ «Союзхимпромпроект» · ФГБОУ ВО КНИТУ · © 2026</span>
+      <span class="footer-addr">г. Казань, ул. Димитрова, 11</span>
+    </div>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
+

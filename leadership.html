@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script src="language.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Руководители и главные специалисты проектного института Союзхимпромпроект.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Руководство института — Союзхимпромпроект">
+  <meta property="og:description" content="Руководители и главные специалисты проектного института Союзхимпромпроект.">
+  <meta property="og:image" content="https://warriorfdkl.github.io/cxpp-site-preview/logo%20main/logo-complete.png">
+<title>Руководство института — Союзхимпромпроект</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* ── Layout & Section ── */
+  .lead-main {
+    padding: clamp(48px, 6vw, 84px) clamp(20px, 5vw, 60px) clamp(80px, 10vw, 120px);
+  }
+  .lead-container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* ── Executive Director Panel (Architectural Structure) ── */
+  .exec-panel {
+    background: var(--bg-dark);
+    color: #fff;
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-lg);
+    margin-bottom: 56px;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    overflow: hidden;
+    position: relative;
+  }
+  .exec-photo-col {
+    position: relative;
+    border-right: 1px solid var(--border-dark);
+    background: #090E17;
+    display: flex;
+    flex-direction: column;
+  }
+  .exec-photo-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+  }
+  .exec-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 10%;
+    display: block;
+    filter: contrast(1.03);
+    transition: transform .4s var(--ease-out);
+  }
+  .exec-panel:hover .exec-photo-box img {
+    transform: scale(1.02);
+  }
+  .exec-photo-corner {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    color: var(--accent);
+    background: rgba(13, 21, 34, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-dark);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+  }
+  .exec-info-col {
+    padding: clamp(32px, 4vw, 52px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .exec-meta-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-dark);
+    margin-bottom: 24px;
+  }
+  .exec-code {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .exec-org {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: rgba(255, 255, 255, .4);
+  }
+  .exec-name {
+    margin: 0;
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #fff;
+    text-wrap: balance;
+  }
+  .exec-position {
+    margin: 12px 0 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  .exec-statement {
+    margin: 24px 0 0;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.025);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    text-wrap: pretty;
+  }
+  .exec-contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-dark);
+  }
+  .exec-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-dark);
+    transition: border-color .2s var(--ease-out), background-color .2s var(--ease-out);
+  }
+  .exec-contact-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent);
+  }
+  .exec-contact-link:active {
+    transform: scale(0.99);
+  }
+  .exec-contact-link svg {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 860px) {
+    .exec-panel { grid-template-columns: 1fr; }
+    .exec-photo-col { border-right: none; border-bottom: 1px solid var(--border-dark); }
+    .exec-photo-box { height: 360px; min-height: auto; }
+  }
+
+  /* ── Filter / Navigation Strip ── */
+  .section-header-strip {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 32px;
+  }
+  .strip-title {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .strip-title h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+  }
+  .strip-code {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: var(--accent);
+  }
+  .strip-controls {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: 7px 14px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: .06em;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color .2s var(--ease-out), border-color .2s var(--ease-out), background-color .2s var(--ease-out);
+  }
+  .filter-btn:hover {
+    color: var(--text-primary);
+    border-color: rgba(18, 28, 43, 0.25);
+  }
+  .filter-btn.active {
+    background: var(--bg-dark);
+    color: var(--accent);
+    border-color: var(--bg-dark);
+  }
+
+  /* ── Architectural Grid of Team Cards ── */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 1140px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .team-grid { grid-template-columns: 1fr; }
+  }
+
+  .team-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color .2s var(--ease-out), box-shadow .25s var(--ease-out);
+  }
+  .team-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 12px 28px -10px rgba(18, 28, 43, 0.08);
+  }
+  .team-photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #EAE6DE;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .team-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: filter .3s var(--ease-out);
+  }
+  .team-photo-index {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: #fff;
+    background: rgba(13, 21, 34, 0.82);
+    backdrop-filter: blur(6px);
+    padding: 3px 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .team-photo-dept {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: .14em;
+    color: var(--accent);
+    background: rgba(13, 21, 34, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 5px 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(184, 142, 75, 0.25);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .team-content {
+    padding: 20px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .team-name {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+  .team-role {
+    margin: 8px 0 18px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    min-height: 40px;
+    flex: 1;
+  }
+  .team-phone-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: #F8FAF9;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    transition: background-color .15s var(--ease-out), border-color .15s var(--ease-out), color .15s var(--ease-out);
+  }
+  .team-phone-action:hover {
+    background: var(--bg-dark);
+    border-color: var(--bg-dark);
+    color: #fff;
+  }
+  .team-phone-action svg {
+    color: var(--accent);
+    transition: transform .2s var(--ease-out);
+  }
+  .team-phone-action:hover svg {
+    transform: translate(2px, -2px);
+  }
+
+  /* ── Bottom Technical Specifications Block ── */
+  .technical-footer-box {
+    margin-top: 56px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    padding: clamp(24px, 4vw, 36px);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .technical-footer-box { grid-template-columns: 1fr; }
+  }
+  .tech-info-code {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .tech-info-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .tech-info-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    max-width: 58ch;
+  }
+  .tech-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .btn-tech-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 700;
+    background: var(--bg-dark);
+    color: #fff;
+    border: 1px solid var(--bg-dark);
+    border-radius: var(--radius-sm);
+    padding: 11px 20px;
+    transition: background-color .2s var(--ease-out);
+  }
+  .btn-tech-primary:hover {
+    background: #172436;
+  }
+  .btn-tech-primary:active {
+    transform: scale(0.98);
+  }
+  .btn-tech-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: 11px 18px;
+    transition: border-color .2s var(--ease-out), background-color .2s var(--ease-out);
+  }
+  .btn-tech-outline:hover {
+    border-color: rgba(18, 28, 43, 0.3);
+    background: #FAF8F5;
+  }
+</style>
+
+<link rel="stylesheet" href="refresh.css">
+<script src="intro.js"></script>
+<link rel="stylesheet" href="studio.css">
+<link rel="stylesheet" href="ux.css">
+<script src="api.js"></script>
+<meta name="robots" content="noindex,nofollow">
+<link rel="alternate" hreflang="ru" href="https://warriorfdkl.github.io/cxpp-site-preview/leadership.html">
+<link rel="alternate" hreflang="en" href="https://warriorfdkl.github.io/cxpp-site-preview/en/leadership.html">
+<link rel="alternate" hreflang="x-default" href="https://warriorfdkl.github.io/cxpp-site-preview/leadership.html">
+</head>
+<body>
+<a href="#main-content" class="skip-link">К содержимому</a>
+
+<div id="progress-bar"></div>
+
+<header id="site-header">
+  <a href="index.html" class="header-logo">
+    <span class="logo-icon"><img src="logo main/logo-complete.png" alt="СХПП"></span>
+    <span class="logo-text"><strong>Союзхимпромпроект</strong><small>ПИ · КНИТУ · КАЗАНЬ</small></span>
+  </a>
+  <nav id="desktop-nav">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="services.html">Услуги и технологии</a>
+    <a href="leadership.html" class="active">Руководство</a>
+    <a href="projects.html">Проекты</a>
+    <a href="news.html">Новости</a>
+    <a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  <div class="header-actions"><nav class="language-switch" aria-label="Язык сайта"><a href="leadership.html" lang="ru" hreflang="ru" data-language="ru" aria-current="true" aria-label="Русская версия">RU</a><span aria-hidden="true">/</span><a href="en/leadership.html" lang="en" hreflang="en" data-language="en" aria-label="Английская версия">EN</a></nav>
+    <a href="contacts.html" id="cta-btn">Связаться</a><a class="max-link" href="https://max.ru/join/fExnQDgUSwpiuE_qeJ3bHzJxiOXkAr_PZIP31EDkyGs" target="_blank" rel="noopener noreferrer" aria-label="Группа института в MAX" title="Группа института в MAX"><img src="assets/icons/max.svg" alt="" width="28" height="28"></a>
+    <button id="burger-btn" aria-label="Меню"><span></span></button>
+  </div>
+</header>
+<div id="mobile-menu">
+  <button id="close-menu-btn" aria-label="Закрыть">×</button>
+  <a href="index.html">Главная</a>
+  <a href="about.html">О нас</a>
+  <a href="services.html">Услуги и технологии</a>
+  <a href="leadership.html"><span class="dot"></span>Руководство</a>
+  <a href="projects.html">Проекты</a>
+  <a href="news.html">Новости</a>
+    <a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a>
+  <a href="contacts.html">Контакты</a>
+</div>
+
+<section id="main-content" tabindex="-1" class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">ГЛАВНАЯ</a><span class="sep">/</span><span class="crumb">РУКОВОДСТВО</span></div>
+    <h1>Руководство института</h1>
+    <p>Проектный корпус и главные специалисты ПИ «Союзхимпромпроект», обеспечивающие соответствие объектов нормам промышленной безопасности, технологическим регламентам и стандартам СРО.</p>
+  </div>
+</section>
+
+<main class="lead-main">
+  <div class="lead-container">
+
+    <!-- ── DIRECTOR EXECUTIVE PANEL ── -->
+    <section class="exec-panel" data-reveal>
+      <div class="exec-photo-col">
+        <div class="exec-photo-box">
+          <img src="nachalstvo/Кочнев.jpg" alt="Кочнев Павел Владимирович">
+          <div class="exec-photo-corner">№ 01 / ДИРЕКЦИЯ</div>
+        </div>
+      </div>
+
+      <div class="exec-info-col">
+        <div>
+          <div class="exec-meta-bar">
+            <span class="exec-code">// РУКОВОДИТЕЛЬ ОРГАНИЗАЦИИ</span>
+            <span class="exec-org">ФГБОУ ВО «КНИТУ»</span>
+          </div>
+
+          <h2 class="exec-name">Кочнев Павел Владимирович</h2>
+          <div class="exec-position">Директор проектного института</div>
+
+          <div class="exec-statement">
+            «С 1953 года институт развивает практику генерального проектирования химических производств. Опираясь на академический потенциал КНИТУ и технологии 3D-лазерного сканирования, мы гарантируем комплексный надзор и точность технических решений на объектах повышенной опасности.»
+          </div>
+        </div>
+
+        <div class="exec-contacts-grid">
+          <a href="tel:+78432949392" class="exec-contact-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>(843) 294-93-92</span>
+          </a>
+          <a href="mailto:cxpp@cxpp.ru" class="exec-contact-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            <span>cxpp@cxpp.ru</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STRIP CONTROLS ── -->
+    <div class="section-header-strip" data-reveal>
+      <div class="strip-title">
+        <span class="strip-code">// СОСТАВ</span>
+        <h2>Ведущий руководящий корпус</h2>
+      </div>
+      <div class="strip-controls">
+        <button class="filter-btn active" data-team-filter="all">[ 00 ] Все (8)</button>
+        <button class="filter-btn" data-team-filter="engineering">[ 01 ] Инженерно-технический (4)</button>
+        <button class="filter-btn" data-team-filter="management">[ 02 ] Администрация и производство (4)</button>
+      </div>
+    </div>
+
+    <!-- ── ARCHITECTURAL GRID OF SPECIALISTS ── -->
+    <div class="team-grid">
+
+      <!-- 01: Киляков -->
+      <article class="team-card" data-cat="engineering" data-reveal>
+        <div class="team-photo-wrap">
+          <img src="nachalstvo/Киляков.jpeg" alt="Киляков Евгений Львович">
+          <div class="team-photo-index">№ 02</div>
+          <div class="team-photo-dept">ГЛАВНЫЙ ИНЖЕНЕР</div>
+        </div>
+        <div class="team-content">
+          <h3 class="team-name">Киляков Евгений Львович</h3>
+          <div class="team-role">Главный инженер института</div>
+          <a href="tel:+78432945966" class="team-phone-action">
+            <span>(843) 294-59-66</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 02: Гарипов -->
+      <article class="team-card" data-cat="engineering" data-reveal data-delay="30">
+        <div class="team-photo-wrap">
+          <img src="nachalstvo/Гарипов.jpg" alt="Гарипов Наиль Ильгизович">
+          <div class="team-photo-index">№ 03</div>
+          <div class="team-photo-dept">ТЕХНОЛОГИЧЕСКИЙ БЛОК</div>
+        </div>
+        <div class="team-content">
+          <h3 class="team-name">Гарипов Наиль Ильгизович</h3>
+          <div class="team-role">Заместитель главного инженера по технологии</div>
+          <a href="tel:+78432949375" class="team-phone-action">
+            <span>(843) 294-93-75</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 03: Гаврилов -->
+      <article class="team-card" data-cat="engineering" data-reveal data-delay="60">
+        <div class="team-photo-wrap">
+          <img src="nachalstvo/Гаврилов.jpg" alt="Гаврилов Андрей Григорьевич">
+          <div class="team-photo-index">№ 04</div>
+          <div class="team-photo-dept">СТРОИТЕЛЬНЫЙ БЛОК</div>
+        </div>
+        <div class="team-content">
+          <h3 class="team-name">Гаврилов Андрей Григорьевич</h3>
+          <div class="team-role">Заместитель главного инженера по строительному проектированию</div>
+          <a href="tel:+78432949306" class="team-phone-action">
+            <span>(843) 294-93-06</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 04: Исхаков -->
+      <article class="team-card" data-cat="engineering" data-reveal data-delay="90">
+        <div class="team-photo-wrap">
+          <img src="nachalstvo/ИСХАКОВ.jpg" alt="Исхаков Айрат Рустемович">
+          <div class="team-photo-index">№ 05</div>
+          <div class="team-photo-dept">BIM & ЦИФРОВИЗАЦИЯ</div>
+        </div>
+        <div class="team-content">
+          <h3 class="team-name">Исхаков Айрат Рустемович</h3>
+          <div class="team-role">Заместитель главного инженера по цифровизации</div>
+          <a href="tel:+78432949388" class="team-phone-action">
+            <span>(843) 294-93-88</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 05: Александров -->
+      <article class="team-card" data-cat="management" data-reveal data-delay="120">
+        <div class="team-photo-wrap">
+          <img src="nachalstvo/Александров.jpg" alt="Александров Владимир Евгеньевич">
+          <div class="team-photo-index">№ 06</div>
+          <div class="team-photo-dept">ПРОИЗВОДСТВО</div>
+        </div>
+        <div class="team-content">
+          <h3 class="team-name">Александров Владимир Евгеньевич</h3>
+          <div class="team-role">Заместитель директора по производству</div>
+          <a href="tel:+78432949425" class="team-phone-action">
+            <span>(843) 294-94-25</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 06: Рыжов -->
+      <article class="team-card" data-cat="management" data-reveal data-delay="150">
+        <div class="team-photo-wrap">
+          <img src="nachalstvo/Рыжов.jpg" alt="Рыжов Александр Юрьевич">
+          <div class="team-photo-index">№ 07</div>
+          <div class="team-photo-dept">БЕЗОПАСНОСТЬ</div>
+        </div>
+        <div class="team-content">
+          <h3 class="team-name">Рыжов Александр Юрьевич</h3>
+          <div class="team-role">Заместитель директора по безопасности</div>
+          <a href="tel:+78432949290" class="team-phone-action">
+            <span>(843) 294-92-90</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 07: Хуснуллин -->
+      <article class="team-card" data-cat="management" data-reveal data-delay="180">
+        <div class="team-photo-wrap">
+          <img src="nachalstvo/Хуснуллин.jpg" alt="Хуснуллин Руслан Ринатович">
+          <div class="team-photo-index">№ 08</div>
+          <div class="team-photo-dept">ОБЩИЕ ВОПРОСЫ</div>
+        </div>
+        <div class="team-content">
+          <h3 class="team-name">Хуснуллин Руслан Ринатович</h3>
+          <div class="team-role">Заместитель директора по общим вопросам</div>
+          <a href="tel:+78432949374" class="team-phone-action">
+            <span>(843) 294-93-74</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 08: Култашева -->
+      <article class="team-card" data-cat="management" data-reveal data-delay="210">
+        <div class="team-photo-wrap">
+          <img src="nachalstvo/Култашева.jpg" alt="Култашева Елена Алексеевна">
+          <div class="team-photo-index">№ 09</div>
+          <div class="team-photo-dept">ФИНАНСЫ & УЧЁТ</div>
+        </div>
+        <div class="team-content">
+          <h3 class="team-name">Култашева Елена Алексеевна</h3>
+          <div class="team-role">Главный бухгалтер</div>
+          <a href="tel:+78432949376" class="team-phone-action">
+            <span>(843) 294-93-76</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ── TECHNICAL CONSULTATION STRIP ── -->
+    <section class="technical-footer-box" data-reveal>
+      <div>
+        <div class="tech-info-code">// РАБОЧИЙ РЕГЛАМЕНТ</div>
+        <div class="tech-info-title">Приёмная дирекции и координация проектов</div>
+        <div class="tech-info-desc">
+          Обращения по исходно-разрешительной документации, согласованию технических заданий и авторскому надзору принимаются секретариатом института: Пн–Пт с 8:00 до 17:00 (МСК).
+        </div>
+      </div>
+      <div class="tech-actions">
+        <a href="contacts.html" class="btn-tech-primary">Перейти в контакты →</a>
+        <a href="tel:+78432949410" class="btn-tech-outline">Приёмная: (843) 294-94-10</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand"><span class="footer-logo-icon"><img src="logo main/logo-complete.png" alt="СХПП"></span><span class="footer-brand-name">Союзхимпромпроект</span></a>
+        <p class="footer-tagline">Проектный институт при ФГБОУ ВО «КНИТУ». Комплексное проектирование объектов химии и промышленности с 1953 года.</p>
+        <a href="mailto:cxpp@cxpp.ru" class="footer-email-btn">cxpp@cxpp.ru</a>
+      </div>
+      <div>
+        <div class="footer-section-label">РАЗДЕЛЫ</div>
+        <div class="footer-nav-links">
+          <a href="index.html">Главная</a><a href="about.html">О нас</a>
+          <a href="services.html">Услуги и технологии</a><a href="leadership.html">Руководство</a><a href="projects.html">Проекты</a>
+          <a href="news.html">Новости</a><a href="documents.html">&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;</a><a href="contacts.html">Контакты</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-section-label">КОНТАКТЫ</div>
+        <div class="footer-contact-item"><div class="footer-contact-label">АДРЕС</div><div class="footer-contact-value">420032, г. Казань, ул. Димитрова, 11</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">ТЕЛЕФОН</div><div class="footer-contact-value">(843) 294-94-10</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">ФАКС</div><div class="footer-contact-value">(843) 294-92-80</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-label">РЕЖИМ</div><div class="footer-contact-value">Пн–Пт, 8:00 — 17:00</div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">ПИ «Союзхимпромпроект» · ФГБОУ ВО КНИТУ · © 2026</span>
+      <span class="footer-addr">г. Казань, ул. Димитрова, 11</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="leadership-filter.js"></script>
+</body>
+</html>
