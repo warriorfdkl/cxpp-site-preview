@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="24" viewBox="0 0 48 24" role="img" aria-label="MAX">
-  <defs>
-    <linearGradient id="max-brand" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#168aff"/>
-      <stop offset="1" stop-color="#8034e9"/>
-    </linearGradient>
-  </defs>
-  <text x="1" y="19" fill="url(#max-brand)" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="-.8">MAX</text>
-</svg>
