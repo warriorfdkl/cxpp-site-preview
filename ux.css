@@ -95,6 +95,36 @@ h1,h2,h3,p,a,dd { overflow-wrap: anywhere; }
 .max-link:hover { transform:scale(1.06); }
 .max-link:focus-visible { outline:2px solid #a77428; outline-offset:3px; }
 html[lang="en"] .logo-text small { letter-spacing:.04em; }
+
+/* Comfortable reading sizes and touch targets across phone layouts. */
+@media (max-width:760px) {
+  .page-hero { padding:108px 20px 34px; }
+  .page-hero .breadcrumb,.breadcrumb { font-size:12px; line-height:1.5; letter-spacing:.08em; }
+  .page-hero h1 { font-size:clamp(32px,8.7vw,46px); line-height:1.04; }
+  .page-hero p { font-size:16px; line-height:1.6; }
+  .studio-kicker { font-size:12px; letter-spacing:.08em; }
+  .filter-bar { gap:8px; margin-bottom:28px; }
+  .filter-btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 14px; font-size:13px; line-height:1.35; letter-spacing:.055em; }
+  .news-body,.featured-body { padding:20px; }
+  .news-title,.featured-title { font-size:21px; line-height:1.28; }
+  .news-read,.featured-read,.home-resource-link { display:inline-flex; align-items:center; min-height:44px; padding-top:8px; font-size:14px; letter-spacing:.025em; }
+  .news-thumb-date,.featured-date,.document-type,.home-resource-kicker { font-size:12px; line-height:1.4; letter-spacing:.06em; }
+  .contact-item dt { font-size:12px; letter-spacing:.07em; }
+  .contact-item dd,.contact-item a[href^="tel:"] { font-size:16px; }
+  .contact-form-card { padding:20px; }
+  .contact-form-card > p,.form-status,.content-notice { font-size:16px; line-height:1.55; }
+  .form-field label,.contact-secondary { font-size:14px; }
+  .form-help { font-size:14px; line-height:1.5; }
+  .services-jump-nav a { min-height:48px; padding:11px 14px; font-size:14px; }
+  .studio-hero-link,.studio-text-link { min-height:48px; gap:16px; font-size:14px; }
+  .studio-work-open,.studio-bottom-primary,.article-back,.map-link { min-height:48px; display:inline-flex; align-items:center; font-size:14px; }
+  .studio-work-details dd,.project-tag-chip,.studio-work-meta span { font-size:13px; }
+  .footer-nav-links a { display:inline-flex; align-items:center; min-height:44px; font-size:15px; }
+  .footer-contact-label,.footer-addr { font-size:12px; letter-spacing:.07em; }
+  .footer-contact-value { font-size:16px; }
+  .footer-copy { font-size:13px; line-height:1.5; }
+}
+
 #mobile-menu { overflow-y:auto; overscroll-behavior:contain; padding-top:74px; padding-bottom:max(24px,env(safe-area-inset-bottom)); }
 #mobile-menu a { flex-shrink:0; min-height:48px; }
 #mobile-menu button { flex-shrink:0; }
