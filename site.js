@@ -103,3 +103,45 @@ const countObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+// Mobile-only menu tools reuse the existing destinations and localised labels.
+// No elements are added to the desktop DOM; resizing restores the original menu.
+(() => {
+  if (!menu || !header) return;
+  const mobile = window.matchMedia('(max-width: 1023px)');
+  let additions = [];
+  function updateMobileMenu() {
+    if (!mobile.matches) {
+      if (additions.length && menu.classList.contains('open')) setMenuOpen(false);
+      additions.forEach(node => node.remove());
+      additions = [];
+      return;
+    }
+    if (additions.length) return;
+    const title = document.createElement('p');
+    title.className = 'mobile-menu-title';
+    title.textContent = header.querySelector('.logo-text strong')?.textContent || document.title;
+    const tools = document.createElement('div');
+    tools.className = 'mobile-menu-tools';
+    const languages = header.querySelector('.language-switch')?.cloneNode(true);
+    const contact = header.querySelector('#cta-btn')?.cloneNode(true);
+    if (languages) tools.append(languages);
+    if (contact) {
+      contact.removeAttribute('id');
+      contact.className = 'mobile-menu-contact';
+      tools.append(contact);
+    }
+    const email = document.querySelector('footer a[href^="mailto:"]')?.cloneNode(true);
+    if (email) email.className = 'mobile-menu-email';
+    menu.prepend(title);
+    menu.append(tools);
+    if (email) menu.append(email);
+    additions = [title, tools, email].filter(Boolean);
+    additions.forEach(node => {
+      const links = node.matches('a') ? [node] : node.querySelectorAll('a');
+      links.forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+    });
+  }
+  updateMobileMenu();
+  mobile.addEventListener('change', updateMobileMenu);
+})();
