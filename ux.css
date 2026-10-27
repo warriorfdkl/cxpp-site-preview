@@ -541,6 +541,7 @@ html[lang="en"] .logo-text small { letter-spacing:.04em; }
   footer { padding:40px 32px 28px; }
 }
 @media (max-width:360px) {
+  .footer-grid > div:has(.footer-contact-item) { grid-template-columns:minmax(0,1fr); }
   #site-header,#site-header.scrolled { padding-right:16px; padding-left:16px; gap:6px; }
   .header-logo { gap:6px; }
   .logo-icon { width:40px; }
