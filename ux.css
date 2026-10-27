@@ -149,12 +149,14 @@ html[lang="en"] .logo-text small { letter-spacing:.04em; }
   .logo-icon { width:48px; }
   .header-actions { gap:8px; }
 }
-@media (max-width:380px) {
+@media (max-width:400px) {
   .logo-text strong { font-size:9px; }
+}
+@media (max-width:380px) {
   .logo-icon { width:40px; }
   .language-switch a { min-width:30px; }
 }
-@media (max-width:420px) {
+@media (max-width:360px) {
   #site-header:has(.max-link) .header-logo .logo-text { display:none; }
 }
 @media (max-height:700px) {
