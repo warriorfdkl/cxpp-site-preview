@@ -17,14 +17,7 @@
           <div class="${featured ? 'featured-thumb' : 'news-thumb'}">${image(n.image, n.title, 'assets/editorial/news-2026.jpg')}<span class="${featured ? 'featured-date' : 'news-thumb-date'}">${e(date(n.date))}</span></div>
           <div class="${featured ? 'featured-body' : 'news-body'}">${featured ? `<span class="featured-label">${e(n.tag)}</span>` : ''}<h2 class="${featured ? 'featured-title' : 'news-title'}">${e(n.title)}</h2>${featured && n.desc ? `<p class="featured-desc">${e(n.desc)}</p>` : ''}<span class="${featured ? 'featured-read' : 'news-read'}">${e(t('Читать новость ↗'))}</span></div></a>`;
         document.getElementById(featured ? 'featured-news' : 'news-grid').insertAdjacentHTML('afterbegin', card);
-        const bar = document.getElementById('filter-bar');
-        if (n.tag && ![...bar.querySelectorAll('button')].some(b => b.dataset.filter === n.tag)) {
-          const button = document.createElement('button');
-          button.className = 'filter-btn'; button.dataset.filter = n.tag; button.textContent = n.tag;
-          button.setAttribute('aria-pressed', 'false'); bar.append(button);
-        }
       }
-      window._applyNewsFilter?.();
     } else if (file === 'projects.html') {
       const projects = (await cxppRequest('projects')).map(localize);
       document.getElementById('projects-grid').insertAdjacentHTML('afterbegin', projects.map(p => `<article class="project-card" data-reveal data-publication="${e(p.id)}">
@@ -63,7 +56,7 @@
       document.getElementById('article-content').innerHTML = `${previewNotice(preview)}${originalNotice(project)}<div class="article-thumb">${image(project.image,project.title,'assets/archive/slide-01.jpg')}</div><dl class="project-detail-facts">${facts.map(([label,value])=>`<div><dt>${e(t(label))}</dt><dd>${e(value)}</dd></div>`).join('')}</dl>${project.desc?`<p class="project-summary">${e(project.desc)}</p>`:''}<div class="article-body">${project.body || ''}</div><a href="projects.html" class="article-back">${e(t('← Все проекты'))}</a>`;
     }
   } catch (error) {
-    const target = document.querySelector('#article-content, .filter-bar, .projects-grid');
+    const target = document.querySelector('#article-content, #featured-news, .projects-grid');
     if (target) {
       const status = document.createElement('p'); status.className = 'content-notice'; status.setAttribute('role','status');
       status.textContent = ['news-article.html','project.html'].includes(file) ? error.message : t('Дополнительные публикации временно недоступны. Обновите страницу позже.');
