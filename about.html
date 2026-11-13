@@ -66,7 +66,7 @@
   .tl-item:last-child { padding-bottom: 0; }
   .tl-item::after { content: ''; position: absolute; left: calc(var(--tl-date) + var(--tl-gap) / 2); top: 14px; width: 9px; height: 9px; border-radius: 50%; background: #D4AB63; transform: translate(-50%,-50%); }
   .tl-year {
-    font-family: 'IBM Plex Mono', monospace; font-size: 24px; line-height: 1.2; letter-spacing: -.04em;
+    font-family: var(--font-sans); font-size: 24px; line-height: 1.2; letter-spacing: -.04em;
     color: #D4AB63; font-weight: 500; text-align: left; white-space: nowrap;
   }
   .tl-body { min-width: 0; padding: 0; }
@@ -97,14 +97,14 @@
     transition: border-color .3s;
   }
   .res-card:hover { border-color: rgba(212,171,98,.4); }
-  .res-card-num { font-family: 'IBM Plex Mono', monospace; font-size: 28px; font-weight: 600; color: #D4AB63; letter-spacing: -.02em; line-height: 1; margin-bottom: 12px; }
+  .res-card-num { font-family: var(--font-sans); font-size: 28px; font-weight: 600; color: #D4AB63; letter-spacing: -.02em; line-height: 1; margin-bottom: 12px; }
   .res-card-title { font-size: 15px; font-weight: 700; color: #182b4b; margin-bottom: 8px; }
   .res-card-desc { font-size: 14px; line-height: 1.6; color: #64748b; margin: 0; }
 
   .partners-strip { margin-top: 24px; padding: 24px; background: #fff; border: 1px solid rgba(24,43,75,.08); border-radius: 20px; }
-  .partners-strip-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; color: #8A4C16; margin-bottom: 16px; }
+  .partners-strip-label { font-family: var(--font-sans); font-size: 11px; letter-spacing: .14em; color: #8A4C16; margin-bottom: 16px; }
   .partners-strip-list { display: flex; flex-wrap: wrap; gap: 10px; }
-  .partners-strip-tag { font-size: 13.5px; color: #475569; background: #f1efe9; border-radius: 8px; padding: 6px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .03em; }
+  .partners-strip-tag { font-size: 13.5px; color: #475569; background: #f1efe9; border-radius: 8px; padding: 6px 12px; font-family: var(--font-sans); font-size: 12px; letter-spacing: .03em; }
 </style>
 
 <link rel="stylesheet" href="refresh.css">
@@ -138,7 +138,7 @@
     <a href="contacts.html">Контакты</a>
   </nav>
   <div class="header-actions"><nav class="language-switch" aria-label="Язык сайта"><a href="about.html" lang="ru" hreflang="ru" data-language="ru" aria-current="true" aria-label="Русская версия">RU</a><span aria-hidden="true">/</span><a href="en/about.html" lang="en" hreflang="en" data-language="en" aria-label="Английская версия">EN</a></nav>
-    <a href="contacts.html" id="cta-btn">Связаться</a><a class="max-link" href="https://max.ru/join/fExnQDgUSwpiuE_qeJ3bHzJxiOXkAr_PZIP31EDkyGs" target="_blank" rel="noopener noreferrer" aria-label="Группа института в MAX" title="Группа института в MAX"><img src="assets/icons/max-icon.svg" alt="" width="28" height="28"></a>
+    <a href="contacts.html" id="cta-btn">Связаться</a>
     <button id="burger-btn" aria-label="Меню"><span></span></button>
   </div>
 </header>
@@ -159,7 +159,7 @@
   <div class="page-hero-inner">
     <div class="breadcrumb"><a href="index.html">ГЛАВНАЯ</a><span class="sep">/</span><span class="crumb">О НАС</span></div>
     <h1>Проектный институт</h1>
-    <p>Генеральная проектная организация для объектов химии, нефтепереработки, газохимии и пищевой отрасли.</p>
+    <p>Генеральная проектная организация для объектов химии, нефтепереработки, газохимии и пищевой промышленности</p>
   </div>
 </section>
 
@@ -168,7 +168,7 @@
     <div class="text-col" data-reveal>
       <div class="mono-tag">// КТО МЫ</div>
       <h2 class="section-h2">Полный цикл — от идеи до работающего объекта</h2>
-      <p>ПИ «Союзхимпромпроект» — генеральная проектная организация комплексного проектирования объектов химической промышленности. Сопровождаем проект на каждом этапе — от обоснования инвестиций до авторского надзора.</p>
+      <p>ПИ «Союзхимпромпроект» — генеральная проектная организация комплексного промышленного проектирования. Сопровождаем проект на каждом этапе — от обоснования инвестиций до авторского надзора.</p>
       <p>Применяем трёхмерное моделирование, лазерное сканирование и фотограмметрию, выполняем научно-техническое сопровождение объектов повышенного уровня опасности.</p>
       <p>Институт входит в структуру ФГБОУ ВО «КНИТУ». Отбираем лучших выпускников, участвуем в подготовке технологов-проектировщиков и следим за новыми научными разработками.</p>
     </div>
@@ -247,7 +247,7 @@
           <div class="tl-year">1971</div>
           <div class="tl-body">
             <p>Институт преобразован в самостоятельный Государственный союзный специальный институт «Союзхимпромпроект» в составе Министерства машиностроения СССР. Институт определён головной организацией СССР по проектированию производств промышленных взрывчатых веществ.</p>
-            <p>За период деятельности в составе Министерства проектные работы выполнялись более чем для 50 предприятий и НИИ отрасли, из которых по 26 институт имел статус генеральной проектной организации. Заказчики располагались на территории Украины, республик Средней Азии, Урала, Сибири, Дальнего Востока и Севера. Институт принимал участие в подготовке документации для строительства объектов в Ираке и Сирии.</p>
+            <p>За период деятельности в составе Министерства проектные работы выполнялись более чем для 50 предприятий и НИИ отрасли. Для 26 из них институт выступал генеральной проектной организацией. Заказчики располагались в республиках Средней Азии, на Урале, в Сибири, на Дальнем Востоке и Севере. Институт принимал участие в подготовке документации для строительства объектов в Ираке и Сирии.</p>
           </div>
         </div>
         <div class="tl-item">
@@ -267,7 +267,7 @@
           <div class="tl-year">Сегодня</div>
           <div class="tl-body">
             <p>ПИ «Союзхимпромпроект» — многопрофильная проектная организация, один из крупнейших проектных институтов России в области промышленного проектирования. Численность сотрудников — более 500 человек, объём проектных работ — более 2 млрд рублей в год.</p>
-            <p>Действующие заказчики: ПАО «СИБУР», АО «Аммоний», АО «ТАНЕКО», ПАО «Татнефть», ПАО «Нижнекамскшина», ПАО «Казаньоргсинтез», ПАО «Нижнекамскнефтехим», АО «Технодинамика», предприятия оборонной промышленности и др.</p>
+            <p>Заказчики: ПАО «СИБУР», АО «Аммоний», АО «ТАНЕКО», ПАО «Татнефть», ПАО «Нижнекамскшина», ПАО «Казаньоргсинтез», ПАО «Нижнекамскнефтехим», НЗМУ, «Эгида» и др.</p>
             <p>Институт имеет значительный опыт работы с иностранными компаниями-лицензиарами: Sinopec Corp. (Китай), FLUOR Corporation (США), Tecnimont S.p.A (Италия), Mitsubishi Heavy Industries (Япония), China Chengda Engineering Co., Ltd (Китай).</p>
           </div>
         </div>
@@ -287,7 +287,7 @@
       <div class="res-card" data-reveal>
         <div class="res-card-num">560–580</div>
         <div class="res-card-title">Сотрудников в штате</div>
-        <p class="res-card-desc">Около 80% — проектировщики, изыскатели, конструкторы-механики и специалисты-эксперты, включая технических руководителей.</p>
+        <p class="res-card-desc">Собственный штат инженеров-технологов, инженеров-строителей, архитекторов, электриков и других технических специалистов. Опытная команда технических руководителей.</p>
       </div>
       <div class="res-card" data-reveal data-delay="50">
         <div class="res-card-num">2+ млрд</div>

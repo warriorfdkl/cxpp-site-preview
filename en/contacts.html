@@ -54,7 +54,7 @@
 
   .info-card-icon span { display: block; width: 14px; height: 14px; background: #D4AB63; transform: rotate(45deg); border-radius: 3px; }
 
-  .info-card-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; color: #8A4C16; margin-bottom: 10px; }
+  .info-card-label { font-family: var(--font-sans); font-size: 11px; letter-spacing: .14em; color: #8A4C16; margin-bottom: 10px; }
 
   .info-card-value { font-size: 16px; line-height: 1.5; color: #182b4b; font-weight: 600; }
 
@@ -84,7 +84,7 @@
 
   .email-card-inner { position: relative; }
 
-  .email-tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #D4AB63; margin-bottom: 18px; }
+  .email-tag { font-family: var(--font-sans); font-size: 12px; letter-spacing: .14em; color: #D4AB63; margin-bottom: 18px; }
 
   .email-card h2 { margin: 0; font-size: clamp(24px,3vw,34px); font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
 
@@ -104,7 +104,7 @@
 
   .email-details { margin-top: 34px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.12); display: grid; gap: 18px; }
 
-  .detail-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; color: rgba(255,255,255,.45); margin-bottom: 8px; }
+  .detail-label { font-family: var(--font-sans); font-size: 11px; letter-spacing: .14em; color: rgba(255,255,255,.45); margin-bottom: 8px; }
 
   .detail-phone { text-decoration: none; font-size: 20px; font-weight: 700; color: #fff; }
 
@@ -136,7 +136,7 @@
 
   .map-pin-dot span { display: block; width: 14px; height: 14px; border-radius: 50%; background: #fff; }
 
-  .map-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; color: #6b7280; }
+  .map-label { font-family: var(--font-sans); font-size: 12px; letter-spacing: .1em; color: #6b7280; }
 
 </style>
 
@@ -192,7 +192,7 @@
 
   <div class="header-actions"><nav class="language-switch" aria-label="Language"><a href="../contacts.html" lang="ru" hreflang="ru" data-language="ru" aria-label="Russian version">RU</a><span aria-hidden="true">/</span><a href="contacts.html" lang="en" hreflang="en" data-language="en" aria-label="English version" aria-current="true">EN</a></nav>
 
-    <a href="contacts.html" id="cta-btn">Contact Us</a><a class="max-link" href="https://max.ru/join/fExnQDgUSwpiuE_qeJ3bHzJxiOXkAr_PZIP31EDkyGs" target="_blank" rel="noopener noreferrer" aria-label="Soyuzkhimpromproekt on MAX" title="Soyuzkhimpromproekt on MAX"><img src="../assets/icons/max-icon.svg" alt="" width="28" height="28"></a>
+    <a href="contacts.html" id="cta-btn">Contact Us</a>
 
     <button id="burger-btn" aria-label="Menu"><span></span></button>
 
@@ -242,22 +242,20 @@
 
 
 <section class="contacts-section">
-  <div class="contacts-grid">
-    <div>
-      <span class="studio-kicker">Get in touch</span>
-      <dl class="contact-summary">
-        <div class="contact-item"><dt>Reception</dt><dd><a href="tel:+78432949410">+7 (843) 294-94-10</a></dd></div>
-        <div class="contact-item"><dt>Email</dt><dd><a href="mailto:cxpp@cxpp.ru">cxpp@cxpp.ru</a></dd></div>
-        <div class="contact-item contact-wide"><dt>Address</dt><dd>11 Dimitrova Street, Kazan 420032, Russia</dd></div>
-        <div class="contact-item contact-wide"><dt>Office hours</dt><dd>Monday–Friday, 08:00–17:00</dd></div>
-      </dl>
-      <p class="contact-secondary">Soyuzkhimpromproekt Design Institute · KNRTU<br>Fax: +7 (843) 294-92-80</p>
-      <p class="form-help">Call us, describe your case and give some details of your project you want to build. This will be enough to launch our discussion. You can also send a design brief and other files by email.</p>
-    </div>
-    <div class="contact-form-card"><span class="studio-kicker">Get in touch</span><h2>Discuss your project</h2><p>This is a preview of the website. Please contact the Institute by email or phone to discuss your project.</p><div class="services-jump-nav"><a href="mailto:cxpp@cxpp.ru">Email Us ↗</a><a href="tel:+78432949410">Call the Institute ↗</a></div></div>
-  </div>
+<div class="contacts-content">
+  <span class="studio-kicker">Get in touch</span>
+  <dl class="contact-summary">
+    <div class="contact-item"><dt>Reception</dt><dd><a href="tel:+78432949410">+7 (843) 294-94-10</a></dd></div>
+    <div class="contact-item"><dt>Email</dt><dd><a href="mailto:cxpp@cxpp.ru">cxpp@cxpp.ru</a></dd></div>
+    <div class="contact-item"><dt>Address</dt><dd>11 Dimitrova Street, Kazan 420032, Russia</dd></div>
+    <div class="contact-item"><dt>Office hours</dt><dd>Monday–Friday, 08:00–17:00</dd></div>
+  </dl>
+  <p class="contact-secondary">Soyuzkhimpromproekt Design Institute · KNRTU<br>Fax: +7 (843) 294-92-80</p>
+  <p class="form-help">Call us, describe your case and give some details of your project you want to build. This will be enough to launch our discussion. You can also send a design brief and other files by email.</p>
+
   <div class="map-wrap"><iframe title="Institute location: 11 Dimitrova Street, Kazan, Russia" src="https://yandex.ru/map-widget/v1/?ll=49.055388%2C55.817276&amp;z=16&amp;pt=49.055388%2C55.817276,pm2rdm" loading="lazy" style="border:0;width:100%;height:100%;"></iframe></div>
   <a class="map-link" href="https://yandex.ru/maps/org/1193730879/" target="_blank" rel="noopener">Open location in Yandex Maps ↗</a>
+</div>
 </section>
 
 
@@ -282,7 +280,7 @@
 
       <div>
 
-        
+
 
         <div class="footer-nav-links">
 
@@ -325,6 +323,7 @@
 </footer>
 
 <script src="../site.js"></script>
+
 
 </body>
 

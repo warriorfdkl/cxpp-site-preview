@@ -24,11 +24,9 @@
     transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s;
   }
   .srv-card:hover { border-color: rgba(212,171,98,.5); box-shadow: 0 12px 28px -10px rgba(18, 28, 43, 0.09); border-color: #D4AB63; transform: translateY(-4px); }
-  .srv-card-top { display: flex; align-items: center; justify-content: space-between; }
   .srv-icon { width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center; }
   .srv-icon span { width: 17px; height: 17px; transform: rotate(45deg); border-radius: 3px; }
-  .srv-num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #D4AB63; letter-spacing: .05em; }
-  .srv-card h3 { margin: 24px 0 0; font-size: 22px; font-weight: 700; letter-spacing: -.01em; color: #182b4b; }
+  .srv-card h3 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.01em; color: #182b4b; }
   .srv-card p { margin: 13px 0 0; font-size: 15px; line-height: 1.65; color: #64748b; }
 
   .process-strip { max-width: 1240px; margin: clamp(48px,6vw,80px) auto 0; }
@@ -38,7 +36,6 @@
     border: 1px solid rgba(24,43,75,.08); border-radius: 10px; overflow: hidden;
   }
   .process-step { background: #fff; padding: 30px 26px; min-height: 150px; display: flex; flex-direction: column; }
-  .process-num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #D4AB63; }
   .process-title { margin-top: 14px; font-size: 17px; font-weight: 700; color: #182b4b; letter-spacing: -.01em; line-height: 1.2; }
 </style>
 
@@ -73,7 +70,7 @@
     <a href="contacts.html">Contacts</a>
   </nav>
   <div class="header-actions"><nav class="language-switch" aria-label="Language"><a href="../services.html" lang="ru" hreflang="ru" data-language="ru" aria-label="Russian version">RU</a><span aria-hidden="true">/</span><a href="services.html" lang="en" hreflang="en" data-language="en" aria-label="English version" aria-current="true">EN</a></nav>
-    <a href="contacts.html" id="cta-btn">Contact Us</a><a class="max-link" href="https://max.ru/join/fExnQDgUSwpiuE_qeJ3bHzJxiOXkAr_PZIP31EDkyGs" target="_blank" rel="noopener noreferrer" aria-label="Soyuzkhimpromproekt on MAX" title="Soyuzkhimpromproekt on MAX"><img src="../assets/icons/max-icon.svg" alt="" width="28" height="28"></a>
+    <a href="contacts.html" id="cta-btn">Contact Us</a>
     <button id="burger-btn" aria-label="Menu"><span></span></button>
   </div>
 </header>
@@ -100,47 +97,29 @@
 </section>
 
 <section class="services-section" id="services" aria-labelledby="services-heading">
-  <div class="services-block-head"><span class="studio-kicker">01 / Services</span><h2 id="services-heading">What we design</h2></div>
+  <div class="services-block-head"><span class="studio-kicker">Services</span><h2 id="services-heading">What we design</h2></div>
   <div class="cards-grid">
     <div class="srv-card" data-reveal>
-      <div class="srv-card-top">
-        <div class="srv-num">01</div>
-      </div>
       <h3>Industrial facilities</h3>
       <p>Comprehensive engineering for chemical, petrochemical, gas processing and food &amp; beverage.</p>
     </div>
     <div class="srv-card" data-reveal data-delay="60">
-      <div class="srv-card-top">
-        <div class="srv-num">02</div>
-      </div>
       <h3>Linear-type facilities</h3>
       <p>Pipelines, pipe racks, utility networks and transport infrastructure.</p>
     </div>
     <div class="srv-card" data-reveal data-delay="120">
-      <div class="srv-card-top">
-        <div class="srv-num">03</div>
-      </div>
       <h3>Civil facilities</h3>
       <p>Public buildings, assets to be protected and engineering infrastructure for industrial sites.</p>
     </div>
     <div class="srv-card" data-reveal data-delay="60">
-      <div class="srv-card-top">
-        <div class="srv-num">04</div>
-      </div>
       <h3>Engineering surveys</h3>
       <p>Structural investigations, laser scanning, measured surveys and as-built models.</p>
     </div>
     <div class="srv-card" data-reveal data-delay="120">
-      <div class="srv-card-top">
-        <div class="srv-num">05</div>
-      </div>
       <h3>R&amp;D support</h3>
       <p>R&amp;D support for the design of critical facilities.</p>
     </div>
     <div class="srv-card" data-reveal data-delay="180">
-      <div class="srv-card-top">
-        <div class="srv-num">06</div>
-      </div>
       <h3>Design supervision</h3>
       <p>Construction support and verification of compliance with the design considerations on site.</p>
     </div>
@@ -149,7 +128,7 @@
 </section>
 
 <section class="services-technologies" id="technologies" aria-labelledby="technologies-heading">
-  <div class="services-block-head"><span class="studio-kicker">02 / Practices</span><h2 id="technologies-heading">How we work</h2><p>Information modeling, laser scanning and photogrammetry throughout the project.</p></div>
+  <div class="services-block-head"><span class="studio-kicker">Practices</span><h2 id="technologies-heading">How we work</h2><p>Information modeling, laser scanning and photogrammetry throughout the project</p></div>
 
   <div class="tech-grid">
     <div class="tech-card" data-reveal>
@@ -161,7 +140,7 @@
       <p>High-precision point clouds for facility refurbishment and investigations.</p>
     </div>
     <div class="tech-card" data-reveal data-delay="120">
-      <h3>UAV photogrammetry</h3>
+      <h3>Photogrammetry</h3>
       <p>Drone surveying to produce digital terrain models.</p>
     </div>
     <div class="tech-card" data-reveal data-delay="180">
@@ -187,19 +166,19 @@
 
 </section>
 <section class="services-process" id="process" aria-labelledby="process-heading">
-  <div class="services-block-head"><span class="studio-kicker">03 / Process</span><h2 id="process-heading">Project stages</h2></div>
+  <div class="services-block-head"><span class="studio-kicker">Process</span><h2 id="process-heading">Project stages</h2></div>
   <div class="process-strip" data-reveal>
 
     <div class="process-grid">
-      <div class="process-step"><span class="process-num">01</span><span class="process-title">Front-end engineering design</span></div>
-      <div class="process-step"><span class="process-num">02</span><span class="process-title">Engineering surveys</span></div>
-      <div class="process-step"><span class="process-num">03</span><span class="process-title">Project documentation</span></div>
-      <div class="process-step"><span class="process-num">04</span><span class="process-title">Detailed design documentation</span></div>
-      <div class="process-step"><span class="process-num">05</span><span class="process-title">Design supervision</span></div>
+      <div class="process-step"><span class="process-title">Front-end engineering design</span></div>
+      <div class="process-step"><span class="process-title">Engineering surveys</span></div>
+      <div class="process-step"><span class="process-title">Project documentation</span></div>
+      <div class="process-step"><span class="process-title">Detailed design documentation</span></div>
+      <div class="process-step"><span class="process-title">Design supervision</span></div>
     </div>
   </div>
 
-  <div class="section-action"><p>Planning a new plant or a refurbishment? Tell us about the facility and your aim.</p><a class="action-button" href="contacts.html#contact-feedback-form">Discuss your aim ↗</a></div>
+  <div class="section-action"><p>Planning a new plant or a refurbishment? Tell us about the facility and your aim.</p><a class="action-button" href="contacts.html">Discuss your aim ↗</a></div>
 </section>
 
 <footer>

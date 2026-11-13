@@ -66,7 +66,7 @@
   .tl-item:last-child { padding-bottom: 0; }
   .tl-item::after { content: ''; position: absolute; left: calc(var(--tl-date) + var(--tl-gap) / 2); top: 14px; width: 9px; height: 9px; border-radius: 50%; background: #D4AB63; transform: translate(-50%,-50%); }
   .tl-year {
-    font-family: 'IBM Plex Mono', monospace; font-size: 24px; line-height: 1.2; letter-spacing: -.04em;
+    font-family: var(--font-sans); font-size: 24px; line-height: 1.2; letter-spacing: -.04em;
     color: #D4AB63; font-weight: 500; text-align: left; white-space: nowrap;
   }
   .tl-body { min-width: 0; padding: 0; }
@@ -97,14 +97,14 @@
     transition: border-color .3s;
   }
   .res-card:hover { border-color: rgba(212,171,98,.4); }
-  .res-card-num { font-family: 'IBM Plex Mono', monospace; font-size: 28px; font-weight: 600; color: #D4AB63; letter-spacing: -.02em; line-height: 1; margin-bottom: 12px; }
+  .res-card-num { font-family: var(--font-sans); font-size: 28px; font-weight: 600; color: #D4AB63; letter-spacing: -.02em; line-height: 1; margin-bottom: 12px; }
   .res-card-title { font-size: 15px; font-weight: 700; color: #182b4b; margin-bottom: 8px; }
   .res-card-desc { font-size: 14px; line-height: 1.6; color: #64748b; margin: 0; }
 
   .partners-strip { margin-top: 24px; padding: 24px; background: #fff; border: 1px solid rgba(24,43,75,.08); border-radius: 20px; }
-  .partners-strip-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; color: #8A4C16; margin-bottom: 16px; }
+  .partners-strip-label { font-family: var(--font-sans); font-size: 11px; letter-spacing: .14em; color: #8A4C16; margin-bottom: 16px; }
   .partners-strip-list { display: flex; flex-wrap: wrap; gap: 10px; }
-  .partners-strip-tag { font-size: 13.5px; color: #475569; background: #f1efe9; border-radius: 8px; padding: 6px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .03em; }
+  .partners-strip-tag { font-size: 13.5px; color: #475569; background: #f1efe9; border-radius: 8px; padding: 6px 12px; font-family: var(--font-sans); font-size: 12px; letter-spacing: .03em; }
 </style>
 
 <link rel="stylesheet" href="../refresh.css">
@@ -138,7 +138,7 @@
     <a href="contacts.html">Contacts</a>
   </nav>
   <div class="header-actions"><nav class="language-switch" aria-label="Language"><a href="../about.html" lang="ru" hreflang="ru" data-language="ru" aria-label="Russian version">RU</a><span aria-hidden="true">/</span><a href="about.html" lang="en" hreflang="en" data-language="en" aria-label="English version" aria-current="true">EN</a></nav>
-    <a href="contacts.html" id="cta-btn">Contact Us</a><a class="max-link" href="https://max.ru/join/fExnQDgUSwpiuE_qeJ3bHzJxiOXkAr_PZIP31EDkyGs" target="_blank" rel="noopener noreferrer" aria-label="Soyuzkhimpromproekt on MAX" title="Soyuzkhimpromproekt on MAX"><img src="../assets/icons/max-icon.svg" alt="" width="28" height="28"></a>
+    <a href="contacts.html" id="cta-btn">Contact Us</a>
     <button id="burger-btn" aria-label="Menu"><span></span></button>
   </div>
 </header>
@@ -159,7 +159,7 @@
   <div class="page-hero-inner">
     <div class="breadcrumb"><a href="index.html">HOME</a><span class="sep">/</span><span class="crumb">ABOUT</span></div>
     <h1>Design Institute</h1>
-    <p>Principal design contractor for chemical, petrochemical and food &amp; beverage applications.</p>
+    <p>General design organisation for chemical, oil refining, gas chemical and food industry facilities</p>
   </div>
 </section>
 
@@ -168,7 +168,7 @@
     <div class="text-col" data-reveal>
       <div class="mono-tag">// WHO WE ARE</div>
       <h2 class="section-h2">Full cycle: from the first idea to an operating site</h2>
-      <p>Soyuzkhimpromproekt is a principal design contractor providing comprehensive engineering services for chemical production. We support projects at every stage, from investment feasibility studies to on-site design supervision.</p>
+      <p>Soyuzkhimpromproekt is a general design organisation providing integrated industrial design. We support each stage of a project, from investment justification to design supervision.</p>
       <p>We use 3D modelling, laser scanning and photogrammetry, and provide R&amp;D support for high-hazard sites.</p>
       <p>The Institute is part of Kazan National Research Technological University (KNRTU). We recruit talented graduates, help train process design engineers and keep pace with scientific research.</p>
     </div>
@@ -247,7 +247,7 @@
           <div class="tl-year">1971</div>
           <div class="tl-body">
             <p>The Institute became an independent State Union Special Institute, Soyuzkhimpromproekt, within the USSR Ministry of Machinery Manufacture. It was designated the USSR's lead organization for the design of commercial explosives productions.</p>
-            <p>While part of the Ministry, the Institute delivered design services for more than 50 factories and R&amp;D establishments, acting as principal design contractor for 26 of them. Clients were based in Ukraine, the Central Asian republics, the Urals, Siberia, the Russian Far East and the North. The Institute also contributed construction documentation for projects in Iraq and Syria.</p>
+            <p>While part of the Ministry, the Institute carried out design work for more than 50 enterprises and research institutes. For 26 of them, it served as the general design organisation. Clients were located in the Central Asian republics, the Urals, Siberia, the Far East and the North. The Institute also prepared documentation for construction projects in Iraq and Syria.</p>
           </div>
         </div>
         <div class="tl-item">
@@ -267,7 +267,7 @@
           <div class="tl-year">Today</div>
           <div class="tl-body">
             <p>Soyuzkhimpromproekt is a multidisciplinary engineering organization and one of Russia's largest industrial design institutes. It employs more than 500 persons and delivers over RUB 2 billion of design activities annually.</p>
-            <p>Current clients include SIBUR, Ammoni, TANECO, Tatneft, Nizhnekamskshina, Kazanorgsintez, Nizhnekamskneftekhim, Technodinamika, defence industry enterprises and other companies.</p>
+            <p>Clients include SIBUR, Ammoni, TANECO, Tatneft, Nizhnekamskshina, Kazanorgsintez, Nizhnekamskneftekhim, NZMU and Egida.</p>
             <p>The Institute has extensive experience working with international technology licensors, including Sinopec Corp. (China), FLUOR Corporation (USA), Tecnimont S.p.A. (Italy), Mitsubishi Heavy Industries (Japan) and China Chengda Engineering Co., Ltd. (China).</p>
           </div>
         </div>
@@ -287,7 +287,7 @@
       <div class="res-card" data-reveal>
         <div class="res-card-num">560–580</div>
         <div class="res-card-title">In-house employees</div>
-        <p class="res-card-desc">Around 80% are design engineers, surveyors, mechanical engineers and technical experts, including engineering leads.</p>
+        <p class="res-card-desc">Our in-house team includes process and civil engineers, architects, electrical engineers and other technical specialists, supported by experienced technical leaders.</p>
       </div>
       <div class="res-card" data-reveal data-delay="50">
         <div class="res-card-num">RUB 2bn+</div>

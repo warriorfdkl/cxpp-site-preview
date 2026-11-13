@@ -12,11 +12,11 @@
     if (file === 'news.html') {
       const news = (await cxppRequest('news')).map(localize);
       for (const n of [...news].reverse()) {
-        const featured = n.featured;
-        const card = `<a href="news-article.html?id=${encodeURIComponent(n.id)}" class="${featured ? 'featured-card' : 'news-card'}" data-reveal data-tag="${e(n.tag)}">
-          <div class="${featured ? 'featured-thumb' : 'news-thumb'}">${image(n.image, n.title, 'assets/editorial/news-2026.jpg')}<span class="${featured ? 'featured-date' : 'news-thumb-date'}">${e(date(n.date))}</span></div>
-          <div class="${featured ? 'featured-body' : 'news-body'}">${featured ? `<span class="featured-label">${e(n.tag)}</span>` : ''}<h2 class="${featured ? 'featured-title' : 'news-title'}">${e(n.title)}</h2>${featured && n.desc ? `<p class="featured-desc">${e(n.desc)}</p>` : ''}<span class="${featured ? 'featured-read' : 'news-read'}">${e(t('Читать новость ↗'))}</span></div></a>`;
-        document.getElementById(featured ? 'featured-news' : 'news-grid').insertAdjacentHTML('afterbegin', card);
+        const visual = n.image ? image(n.image, n.title) : '';
+        const card = `<a href="news-article.html?id=${encodeURIComponent(n.id)}" class="news-card" data-reveal data-tag="${e(n.tag)}">
+          ${visual ? `<div class="news-thumb">${visual}<span class="news-thumb-date">${e(date(n.date))}</span></div>` : `<div class="news-thumb news-thumb--text"><span class="news-visual-label">${e(n.tag || t('НОВОСТИ'))}</span><span class="news-thumb-date">${e(date(n.date))}</span></div>`}
+          <div class="news-body"><h2 class="news-title">${e(n.title)}</h2><span class="news-read">${e(t('Читать новость ↗'))}</span></div></a>`;
+        document.getElementById('news-grid').insertAdjacentHTML('afterbegin', card);
       }
     } else if (file === 'projects.html') {
       const projects = (await cxppRequest('projects')).map(localize);
@@ -37,7 +37,7 @@
       document.title = article.title + ' — ' + t('Союзхимпромпроект');
       document.getElementById('hero-title').textContent = article.title;
       document.getElementById('hero-date').textContent = date(article.date);
-      document.getElementById('article-content').innerHTML = `${previewNotice(preview)}${originalNotice(article)}<div class="article-meta"><span class="article-tag">${e(article.tag)}</span></div><div class="article-thumb">${image(article.image,article.title,'assets/editorial/news-2026.jpg')}</div><div class="article-body">${article.body || `<p>${e(article.desc || t('Подробности появятся позже.'))}</p>`}</div><a href="news.html" class="article-back">${e(t('← Все новости'))}</a>`;
+      document.getElementById('article-content').innerHTML = `${previewNotice(preview)}${originalNotice(article)}<div class="article-meta"><span class="article-tag">${e(article.tag)}</span></div>${article.image ? `<div class="article-thumb">${image(article.image,article.title)}</div>` : ''}<div class="article-body">${article.body || `<p>${e(article.desc || t('Подробности появятся позже.'))}</p>`}</div><a href="news.html" class="article-back">${e(t('← Все новости'))}</a>`;
     } else if (file === 'project.html') {
       const params = new URLSearchParams(location.search);
       const preview = params.get('preview') === '1';
@@ -56,7 +56,7 @@
       document.getElementById('article-content').innerHTML = `${previewNotice(preview)}${originalNotice(project)}<div class="article-thumb">${image(project.image,project.title,'assets/archive/slide-01.jpg')}</div><dl class="project-detail-facts">${facts.map(([label,value])=>`<div><dt>${e(t(label))}</dt><dd>${e(value)}</dd></div>`).join('')}</dl>${project.desc?`<p class="project-summary">${e(project.desc)}</p>`:''}<div class="article-body">${project.body || ''}</div><a href="projects.html" class="article-back">${e(t('← Все проекты'))}</a>`;
     }
   } catch (error) {
-    const target = document.querySelector('#article-content, #featured-news, .projects-grid');
+    const target = document.querySelector('#article-content, #news-grid, .projects-grid');
     if (target) {
       const status = document.createElement('p'); status.className = 'content-notice'; status.setAttribute('role','status');
       status.textContent = ['news-article.html','project.html'].includes(file) ? error.message : t('Дополнительные публикации временно недоступны. Обновите страницу позже.');
